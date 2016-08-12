@@ -78,9 +78,17 @@ class CarsController extends Controller
 
         $cars_limited = Cardetails::find()
         ->limit(6)
+        ->orderBy('id DESC')
         ->all();
         return $this->render('home', [
             'cars_limited' => $cars_limited,
+        ]);
+    }
+
+    public function actionCarhide(){
+        $this->layout ="main";
+        return $this->render('carhide', [
+            
         ]);
     }
 }

@@ -27,6 +27,7 @@ class AdminAsset extends AssetBundle
     public $js = [
 		'admin/bower_components/metisMenu/dist/metisMenu.min.js',
 		'admin/dist/js/sb-admin-2.js',
+        'js/testing.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

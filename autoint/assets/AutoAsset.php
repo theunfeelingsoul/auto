@@ -20,23 +20,23 @@ class AutoAsset extends AssetBundle
     public $css = [
 		'css/style.css',
 		'css/skeleton.css',
-		'sliders/flexslider/flexslider.css',
+		// 'sliders/flexslider/flexslider.css',
 		'fancybox/jquery.fancybox.css',
     ];
     public $js = [
-		// 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js',
 	    'js/modernizr.custom.js',
-		'sliders/flexslider/jquery.flexslider-min.js',
+		// 'sliders/flexslider/jquery.flexslider-min.js',
 		'https://maps.googleapis.com/maps/api/js?key=AIzaSyAjMBVn_GZdUo1xzvfQwcggnBrXN8bcMas',
-		'js/jquery.gmap.min.js',
-		'js/jquery-impromptu.js',
-		'js/jquery.galleriffic.js',
-		'js/custom.js',
+		// 'js/jquery.gmap.min.js',
+		// 'js/jquery-impromptu.js',
+		// 'js/jquery.galleriffic.js',
+		// 'js/custom.js',
+		'js/testing.js',
 		// 'http://code.jquery.com/jquery-migrate-1.2.1.js',
     ];
     public $depends = [
-        'yii\web\YiiAsset',
         'yii\web\JqueryAsset',
+        'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
         'yii\bootstrap\BootstrapPluginAsset',
     ];

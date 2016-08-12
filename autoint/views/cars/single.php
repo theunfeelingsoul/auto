@@ -11,66 +11,61 @@
 			
 			<article class="item clearfix">
 				
-				<!-- <h2 class="title">Ferrari F12 Berlinetta 2012</h2> -->
+				<!-- <h2 class="title">Ferrari F12	 Berlinetta 2012</h2> -->
 				<h2 class="title">
-					<?= 
-						$carz['manufacturer']." ".$carz['model']." ".$carz['model_year']; 
+				xxx
+					<?php
+						// echo "<pre>";
+						// print_r($carz);
+						// echo "</pre>";
+						 $carz['manufacturer']." ".$carz['model']." ".$carz['model_year']; 
 
 					?>
 							
 				</h2>
 
 				<div id="gallery" class="gallery">
+				<?php 	 $carz['images'] ;
+						$z1=rtrim($carz['images'],',');
+						$z=explode(",", $z1);
+						// print_r($z);
 
-					<div class="slideshow-container">
-						<div id="loading" class="loader"></div>
-						<div id="slideshow" class="slideshow clearfix"></div>
-					</div><!--/ .slideshow-container-->
+				?>
+				<div class="row ab">
+				<?php $n1=1;$n2=1; ?>
+				<?php foreach ($z as $key => $value): ?>
+					<div class="col-md-12">
+				<img src="images/uploads/<?= $value;?>"  width="400px" class="imga" id='<?php echo "img".$n1."_" ?>'>
+						
+					</div>
+				<?php $n1++; ?>
+				<?php endforeach ?>
+				</div>
 
-					<div id="thumbs" class="clearfix">
+					<hr>
 
-						<ul class="thumbs list-image clearfix">
+					<div class="row">
+				<?php foreach ($z as $key => $value): ?>
 
-							<li>
-								<a class="thumb" name="leaf" href="images/temp/item-1.jpg" title="Title 0">
-									<img src="images/temp/list-thumb-1.jpg" alt="Title #1" />
-								</a>
-							</li>
+						<div class="col-md-4">
+							<img src="images/uploads/<?= $value;?>" width="" class="imgd" id="<?php echo 'img'.$n2 ?>">
+						</div>
+				<?php $n2++; ?>
+				<?php endforeach ?>
+					</div>
+					
+ <script type="text/javascript">
+       
+   // document.getElementsByClassName("imga").style.display = 'none';
+   // document.getElementsByClassName('imga')[0].style.display = 'none';
+   var appBanners = document.getElementsByClassName('imga'), i;
 
-							<li>
-								<a class="thumb" name="drop" href="images/temp/item-2.jpg" title="Title 1">
-									<img src="images/temp/list-thumb-2.jpg" alt="Title #2" />
-								</a>
-							</li>
+for (var i = 0; i < appBanners.length; i ++) {
+    appBanners[i].style.display = 'none';
+}
 
-							<li>
-								<a class="thumb" name="leaf" href="images/temp/item-3.jpg" title="Title 2">
-									<img src="images/temp/list-thumb-3.jpg" alt="Title #3" />
-								</a>
-							</li>	
-
-							<li>
-								<a class="thumb" name="leaf" href="images/temp/item-4.jpg" title="Title 3">
-									<img src="images/temp/list-thumb-4.jpg" alt="Title #4" />
-								</a>
-							</li>	
-
-							<li>
-								<a class="thumb" name="leaf" href="images/temp/item-5.jpg" title="Title 4">
-									<img src="images/temp/list-thumb-5.jpg" alt="Title #5" />
-								</a>
-							</li>	
-
-							<li>
-								<a class="thumb" name="leaf" href="images/temp/item-6.jpg" title="Title 5">
-									<img src="images/temp/list-thumb-6.jpg" alt="Title #6" />
-								</a>
-							</li>	
-
-						</ul><!--/ .thumbs-->
-
-					</div><!--/ #thumbs-->
-
+  document.getElementById('img1_').style.display = 'block';
+    </script>
 				</div><!--/ #gallery-->
 
 				<div class="extra">
@@ -80,30 +75,29 @@
 					<span class="cost">$8,896.99</span>
 					
 					<ul class="list type-1">
-						<li><b>Reg Number: </b><span>423423</span></li>
-						<li><b>Mileage: </b><span>20650</span></li>
-						<li><b>Body Type: </b><span>Sports</span></li>
-						<li><b>Model Year: </b><span>2002</span></li>
-						<li><b>Engine Size: </b><span>3.8L</span></li>
-						<li><b>Trans: </b><span>Manual</span></li>
-						<li><b>Fuel Type: </b><span>Gas</span></li>
-						<li><b>Owners: </b><span>1</span></li>
+						<li><b>Reg Number: </b><span><?= $carz['reg_number'] ?></span></li>
+						<li><b>Mileage: </b><span><?= $carz['mileage'] ?></span></li>
+						<li><b>Body Type: </b><span><?= $carz['body_type'] ?></span></li>
+						<li><b>Model Year: </b><span><?= $carz['model_year'] ?></span></li>
+						<li><b>Engine Size: </b><span><?= $carz['engine_size'] ?></span></li>
+						<li><b>Trans: </b><span><?= $carz['trans'] ?></span></li>
+						<li><b>Fuel Type: </b><span><?= $carz['fuel_type'] ?></span></li>
+						
 					</ul>
 					
-					<ul class="addthis-toolbox clearfix">
+				<!-- 	<ul class="addthis-toolbox clearfix">
 						<li><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a></li>
 						<li><a class="addthis_button_tweet"></a></li>
 						<li><a class="addthis_button_google_plusone" g:plusone:size="medium"></a></li>
 						<li><a class="addthis_counter addthis_pill_style"></a></li>
-					</ul>
+					</ul> -->
 
-					<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4f3c188f442f3bf2"></script>
 					
 				</div><!--/ .extra-->					
 				
 				<div class="entry-item">
 					
-					<div class="video-box">
+					<!-- <div class="video-box">
 						
 						<b class="heading">Video:</b>
 
@@ -111,9 +105,10 @@
 							<img src="images/temp/list-thumb-1.jpg" alt="" />
 						</a>							
 						
-					</div><!--/ .video-box-->
+					</div> -->
+					<!--/ .video-box-->
 					
-					<h3 class="section-title">VIN Information</h3>
+					<h3 class="section-title">Information</h3>
 					
 					<p>
 						Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -132,226 +127,33 @@
 						incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
 					</p>
 					
-					<div class="entry-tabs">
+					<div>
 
-						<ul class="tabs-nav">
+						<div>
 
-							<li><a href="#tab1">Specifications</a></li>
-							<li><a href="#tab2">Safety</a></li>
-							<li><a href="#tab3">Convenience</a></li>
-							<li><a href="#tab4">Comfort</a></li>
-							<li><a href="#tab5">Entertainment</a></li>
+						  <!-- Nav tabs -->
+						  <ul class="nav nav-tabs" role="tablist">
+						    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+						    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+						    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+						    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+						  </ul>
 
-						</ul><!--/ .tabs-nav -->
+						  <!-- Tab panes -->
+						  <div class="tab-content">
+						    <div role="tabpanel" class="tab-pane active" id="home">..sxsx.</div>
+						    <div role="tabpanel" class="tab-pane" id="profile">...</div>
+						    <div role="tabpanel" class="tab-pane" id="messages">...</div>
+						    <div role="tabpanel" class="tab-pane" id="settings">...</div>
+						  </div>
 
-						<div class="tabs-container">
+						</div>
 
-							<div class="tab-content clearfix" id="tab1">
-								
-								<div class="five columns">
-								
-									<ul class="list type-1">
-										<li><b>Body Style: </b><span>SEDAN 4-DR</span></li>
-										<li><b>Driveline: </b><span>FWD</span></li>
-										<li><b>Fuel Economy-city: </b><span>30-32 miles/gallon</span></li>
-										<li><b>Anti-Brake System: </b><span>Non-ABS | 4-Wheel | ABS</span></li>
-										<li><b>Front Brake Type: </b><span>Disc</span></li>
-										<li><b>Turning Diameter: </b><span>36.10 in.</span></li>
-										<li><b>Rear Suspension: </b><span>Semi</span></li>
-										<li><b>Rear Spring Type: </b><span>Coil</span></li>
-										<li><b>Front Headroom: </b><span>39.10 in.</span></li>
-										<li><b>Front Legroom: </b><span>41.30 in.</span></li>
-										<li><b>Front Shoulder Room: </b><span>53.10 in.</span></li>
-										<li><b>Front Hip Room: </b><span>51.90 in.</span></li>
-										<li><b>Curb Weight-automatic: </b><span>2568 lbs</span></li>
-										<li><b>Overall Length: </b><span>178.30 in.</span></li>
-									</ul>									
-									
-								</div>
-								
-								<div class="five columns">
-								
-									<ul class="list type-1">
-										<li><b>Overall Height: </b><span>58.50 in.</span></li>
-										<li><b>Ground Clearance: </b><span>5.70 in.</span></li>
-										<li><b>Track Front: </b><span>58.30 in.</span></li>
-										<li><b>Standard Seating: </b><span>5</span></li>
-										<li><b>Cargo Volume: </b><span>13.60 ft.</span></li>
-										<li><b>Maximum Towing: </b><span>1500 lbs</span></li>
-										<li><b>Basic-distance: </b><span>36.000 mile</span></li>
-										<li><b>Engine Type: </b><span>1.8L L4 DOHC 16V</span></li>
-									</ul>									
-									
-								</div>
-								
-							</div><!--/ .tab-content -->
+					</div>
 
-							<div class="tab-content clearfix" id="tab2">
-								
-								<div class="five columns">
-								
-									<ul class="list type-1">
-										<li><b>Fuel Economy-city: </b><span>30-32 miles/gallon</span></li>
-										<li><b>Anti-Brake System: </b><span>Non-ABS | 4-Wheel | ABS</span></li>
-										<li><b>Front Brake Type: </b><span>Disc</span></li>
-										<li><b>Turning Diameter: </b><span>36.10 in.</span></li>
-										<li><b>Rear Suspension: </b><span>Semi</span></li>
-									</ul>									
-									
-								</div>
-								
-								<div class="five columns">
-								
-									<ul class="list type-1">
-										<li><b>Overall Height: </b><span>58.50 in.</span></li>
-										<li><b>Ground Clearance: </b><span>5.70 in.</span></li>
-										<li><b>Track Front: </b><span>58.30 in.</span></li>
-										<li><b>Standard Seating: </b><span>5</span></li>
-										<li><b>Cargo Volume: </b><span>13.60 ft.</span></li>
-										<li><b>Maximum Towing: </b><span>1500 lbs</span></li>
-										<li><b>Basic-distance: </b><span>36.000 mile</span></li>
-										<li><b>Engine Type: </b><span>1.8L L4 DOHC 16V</span></li>
-									</ul>									
-									
-								</div>
-							
-							</div><!--/ .tab-content -->
-
-							<div class="tab-content clearfix" id="tab3">
-								
-								<div class="five columns">
-								
-									<ul class="list type-1">
-										<li><b>Body Style: </b><span>SEDAN 4-DR</span></li>
-										<li><b>Driveline: </b><span>FWD</span></li>
-										<li><b>Fuel Economy-city: </b><span>30-32 miles/gallon</span></li>
-										<li><b>Anti-Brake System: </b><span>Non-ABS | 4-Wheel | ABS</span></li>
-										<li><b>Rear Suspension: </b><span>Semi</span></li>
-										<li><b>Rear Spring Type: </b><span>Coil</span></li>
-										<li><b>Front Headroom: </b><span>39.10 in.</span></li>
-										<li><b>Front Legroom: </b><span>41.30 in.</span></li>
-										<li><b>Front Shoulder Room: </b><span>53.10 in.</span></li>
-										<li><b>Front Hip Room: </b><span>51.90 in.</span></li>
-										<li><b>Curb Weight-automatic: </b><span>2568 lbs</span></li>
-									</ul>									
-									
-								</div>
-								
-								<div class="five columns">
-								
-									<ul class="list type-1">
-										
-										<li><b>Cargo Volume: </b><span>13.60 ft.</span></li>
-										<li><b>Maximum Towing: </b><span>1500 lbs</span></li>
-										<li><b>Basic-distance: </b><span>36.000 mile</span></li>
-										<li><b>Engine Type: </b><span>1.8L L4 DOHC 16V</span></li>
-									</ul>									
-									
-								</div>
-		
-							</div><!--/ .tab-content -->
-
-							<div class="tab-content clearfix" id="tab4">
-								
-								<div class="five columns">
-								
-									<ul class="list type-1">
-										<li><b>Rear Suspension: </b><span>Semi</span></li>
-										<li><b>Rear Spring Type: </b><span>Coil</span></li>
-										<li><b>Front Headroom: </b><span>39.10 in.</span></li>
-										<li><b>Front Legroom: </b><span>41.30 in.</span></li>
-										<li><b>Front Shoulder Room: </b><span>53.10 in.</span></li>
-										<li><b>Front Hip Room: </b><span>51.90 in.</span></li>
-										<li><b>Curb Weight-automatic: </b><span>2568 lbs</span></li>
-										<li><b>Overall Length: </b><span>178.30 in.</span></li>
-									</ul>									
-									
-								</div>
-								
-								<div class="five columns">
-								
-									<ul class="list type-1">
-										<li><b>Overall Height: </b><span>58.50 in.</span></li>
-										<li><b>Ground Clearance: </b><span>5.70 in.</span></li>
-										<li><b>Track Front: </b><span>58.30 in.</span></li>
-										<li><b>Standard Seating: </b><span>5</span></li>
-										<li><b>Cargo Volume: </b><span>13.60 ft.</span></li>
-										<li><b>Maximum Towing: </b><span>1500 lbs</span></li>
-										<li><b>Basic-distance: </b><span>36.000 mile</span></li>
-										<li><b>Engine Type: </b><span>1.8L L4 DOHC 16V</span></li>
-									</ul>									
-									
-								</div>
-		
-							</div><!--/ .tab-content -->
-
-							<div class="tab-content clearfix" id="tab5">
-								
-								<div class="five columns">
-								
-									<ul class="list type-1">
-										<li><b>Body Style: </b><span>SEDAN 4-DR</span></li>
-										<li><b>Driveline: </b><span>FWD</span></li>
-										<li><b>Fuel Economy-city: </b><span>30-32 miles/gallon</span></li>
-										<li><b>Anti-Brake System: </b><span>Non-ABS | 4-Wheel | ABS</span></li>
-										<li><b>Rear Spring Type: </b><span>Coil</span></li>
-										<li><b>Front Headroom: </b><span>39.10 in.</span></li>
-										<li><b>Front Legroom: </b><span>41.30 in.</span></li>
-										<li><b>Front Shoulder Room: </b><span>53.10 in.</span></li>
-										<li><b>Front Hip Room: </b><span>51.90 in.</span></li>
-										<li><b>Curb Weight-automatic: </b><span>2568 lbs</span></li>
-									</ul>									
-									
-								</div>
-								
-								<div class="five columns">
-								
-									<ul class="list type-1">
-										<li><b>Track Front: </b><span>58.30 in.</span></li>
-										<li><b>Standard Seating: </b><span>5</span></li>
-										<li><b>Cargo Volume: </b><span>13.60 ft.</span></li>
-										<li><b>Maximum Towing: </b><span>1500 lbs</span></li>
-										<li><b>Basic-distance: </b><span>36.000 mile</span></li>
-										<li><b>Engine Type: </b><span>1.8L L4 DOHC 16V</span></li>
-									</ul>									
-									
-								</div>
-		
-							</div><!--/ .tab-content -->
-
-						</div><!--/ .tabs-container -->	
-
-					</div><!--/ .entry-tabs-->
+					<br>
 					
-					<h3 class="section-title">Contact Us regarding this car</h3>
 					
-						<form method="post" action="" class="comments-form" />
-
-							<p class="input-block">
-								<label for="name">Your Name (required)</label>
-								<input type="text" name="name" id="name" />
-							</p>
-
-							<p class="input-block">
-								<label for="email">Your Email (required)</label>
-								<input type="text" name="email" id="email" />
-							</p>
-
-							<p class="input-block">
-								<label for="web">Website</label>
-								<input type="text" name="web" id="web" />
-							</p>
-
-							<p class="input-block">
-								<label for="comments">You Message: (required)</label>
-								<textarea name="comments" id="comments" cols="30" rows="10"></textarea>	
-							</p>
-
-							<p class="input-block">
-								<button class="button orange" type="submit" id="submit">Submit</button>
-							</p>
-
-						</form><!--/ .contact-form-->	
 					
 				</div><!--/ .entry-item-->
 				
@@ -562,3 +364,5 @@
 	<!-- - - - - - - - - - - - - end Container - - - - - - - - - - - - - - - - -->			
 	
 </div><!--/ .main-->
+
+

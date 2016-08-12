@@ -145,8 +145,6 @@ class Cardetails extends \yii\db\ActiveRecord
             if ($source_size !== false) 
             {
 
-                $thumb_width = 146;
-                $thumb_height = 88;
 
                 switch($source_size['mime']) 
                 {
@@ -163,9 +161,21 @@ class Cardetails extends \yii\db\ActiveRecord
 
                 list($width, $height) = getimagesize($image);
                 //$source_size=getimagesize(getcwd().$upload_image);
-                $newwidth = $width*0.1; // This can be a set value or a percentage of original size ($width)
-                $newheight = $height*0.1; // This can be a set value or a percentage of original size ($height)
+                // $newwidth = $width*0.1; // This can be a set value or a percentage of original size ($width)
+                // $newheight = $height*0.1; // This can be a set value or a percentage of original size ($height)
 
+
+                // the math below makes all images same height. 
+                // and the with is scaled propotionally 
+
+                // height i want
+                $newheight = 116;
+
+                // get the ratio
+                $ratio_orig = $height/$width;
+
+                // get the new propotional width
+                $newwidth = $newheight/$ratio_orig;
                 // Load the images
 
                 $thumb_s = imagecreatetruecolor($newwidth, $newheight);

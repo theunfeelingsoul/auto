@@ -30,13 +30,7 @@ AutoAsset::register($this);
     <meta name="author" content="" />
     
     <link rel="shortcut" href="images/favicon.ico" />
-    <!-- <link rel="stylesheet" href="css/style.css" media="screen" />
-    <link rel="stylesheet" href="css/skeleton.css" media="screen" />
-    <link rel="stylesheet" href="sliders/flexslider/flexslider.css" media="screen" /> -->
-    <!-- <link rel="stylesheet" href="fancybox/jquery.fancybox.css" media="screen" /> -->
 
-    <!-- HTML5 Shiv + detect touch events -->
-    <!-- <script type="text/javascript" src="js/modernizr.custom.js"></script> -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
     <?php $this->head() ?>
@@ -74,7 +68,10 @@ AutoAsset::register($this);
         <nav id="navigation" class="navigation">
             
             <ul>
-                <li class="current-menu-item"><a href="index.html">Home</a></li>
+                <li class="current-menu-item">
+                    <!-- <a href="index.html">Home</a> -->
+                    <?php echo Html::a("Home", ['cars/home'], ['class' => '']) ?>
+                </li>
                 <li><a href="all-listings.html">Browse By</a>
                     <ul>
                         <li><a href="all-listings.html">All Listings</a></li>
@@ -289,19 +286,8 @@ AutoAsset::register($this);
     
 </div><!--/ .account-wrapper-->
 
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
-<!-- <script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script> -->
-<!--[if lt IE 9]>
-    <script src="js/selectivizr-and-extra-selectors.min.js"></script>
-<![endif]-->
-<!-- <script src="sliders/flexslider/jquery.flexslider-min.js"></script> -->
-<!-- <script src="http://maps.google.com/maps/api/js?sensor=false"></script> -->
-<!-- <script src="js/jquery.gmap.min.js"></script>
-<script src="js/jquery-impromptu.js"></script>
-<script src="js/custom.js"></script> -->
-<!-- <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script> -->
+
 <?php $this->endBody() ?>
 </body>
-<script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
 </html>
 <?php $this->endPage() ?>

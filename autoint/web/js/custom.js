@@ -1,4 +1,8 @@
-if($.browser.mozilla||$.browser.opera ){document.removeEventListener("DOMContentLoaded",jQuery.ready,false);document.addEventListener("DOMContentLoaded",function(){jQuery.ready()},false)}
+// if($.browser.mozilla||$.browser.opera ){
+	document.removeEventListener("DOMContentLoaded",jQuery.ready,false);
+	document.addEventListener("DOMContentLoaded",function(){jQuery.ready()
+	});
+	// ,false)}
 jQuery.event.remove( window, "load", jQuery.ready );
 jQuery.event.add( window, "load", function(){jQuery.ready();} );
 jQuery.extend({
